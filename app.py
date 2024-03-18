@@ -11,7 +11,7 @@ def main():
     st.title("Streamlit ECharts Demo")
 
     with st.sidebar:
-        st.header("Configuration")
+        st.header("选择算法与应用场景")
         api_options = ("echarts", "pyecharts")
         selected_api = st.selectbox(
             label="Choose your preferred API:",
