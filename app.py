@@ -17,12 +17,7 @@ def main():
             label="请选择算法:",
             options=api_options,
         )
-
-        page_options = (
-            list(ST_PY_DEMOS.keys())
-            if selected_api == "pyecharts"
-            else list(ST_DEMOS.keys())
-        )
+        page_options = ("CEC2017", "CEC2021")
         selected_page = st.selectbox(
             label="请选择应用场景",
             options=page_options,
