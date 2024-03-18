@@ -27,19 +27,19 @@ def main():
             if selected_api == "echarts"
             else ST_PY_DEMOS[selected_page]
         )
+    image_path = get_image_path(selected_api, selected_page)
+    st.image(image_path)
 
-        if selected_api == "echarts":
-            st.caption(
-                """ECharts demos are extracted from https://echarts.apache.org/examples/en/index.html, 
-            by copying/formattting the 'option' json object into st_echarts.
-            Definitely check the echarts example page, convert the JSON specs to Python Dicts and you should get a nice viz."""
-            )
-        if selected_api == "pyecharts":
-            st.caption(
-                """Pyecharts demos are extracted from https://github.com/pyecharts/pyecharts-gallery,
-            by copying the pyecharts object into st_pyecharts. 
-            Pyecharts is still using ECharts 4 underneath, which is why the theming between st_echarts and st_pyecharts is different."""
-            )
+def get_image_path(selected_api, selected_page):
+    # 这里是一个示例，您需要根据实际情况来设置图片路径
+    if selected_api == 'MSDBO' and selected_page == 'CEC2017':
+        return 'path/to/cec2017_msdbo_image.png'
+    elif selected_api == 'DBO' and selected_page == 'CEC2021':
+        return 'path/to/cec2021_dbo_image.png'
+    # 添加更多条件以覆盖所有选择组合
+    else:
+        return 'path/to/default_image.png'
+
 
     demo()
 
@@ -47,8 +47,7 @@ def main():
     with st.expander("Source Code"):
         st.code(textwrap.dedent("".join(sourcelines[1:])))
     st.markdown(f"Credit: {url}")
-
-
+    
 if __name__ == "__main__":
     st.set_page_config(
         page_title="Streamlit ECharts Demo", page_icon=":chart_with_upwards_trend:"
