@@ -33,12 +33,12 @@ def main():
 def get_image_path(selected_api, selected_page):
     # 这里是一个示例，您需要根据实际情况来设置图片路径
     if selected_api == 'MSDBO' and selected_page == 'CEC2017':
-        return 'path/to/cec2017_msdbo_image.png'
+        return 'data/26.jpg'
     elif selected_api == 'DBO' and selected_page == 'CEC2021':
-        return 'path/to/cec2021_dbo_image.png'
+        return 'data/27.jpg'
     # 添加更多条件以覆盖所有选择组合
     else:
-        return 'path/to/default_image.png'
+        return 'data/26.jpg'
 
 
     demo()
