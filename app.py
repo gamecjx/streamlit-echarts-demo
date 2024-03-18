@@ -12,9 +12,9 @@ def main():
 
     with st.sidebar:
         st.header("选择算法与应用场景")
-        api_options = ("echarts", "pyecharts")
+        api_options = ("MSDBO", "DBO","SSA","BWO","GWO","PO","KOA","WOA")
         selected_api = st.selectbox(
-            label="Choose your preferred API:",
+            label="请选择算法:",
             options=api_options,
         )
 
@@ -24,7 +24,7 @@ def main():
             else list(ST_DEMOS.keys())
         )
         selected_page = st.selectbox(
-            label="Choose an example",
+            label="请选择应用场景",
             options=page_options,
         )
         demo, url = (
